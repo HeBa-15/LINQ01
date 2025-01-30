@@ -143,7 +143,7 @@ namespace LINQ01
 
             //Indexed Where
 
-          //  var result = ProductList.Where((product,index) => product.UnitPrice > 50 && index < 10);
+            //  var result = ProductList.Where((product,index) => product.UnitPrice > 50 && index < 10);
 
 
             //foreach (var unit in result)
@@ -152,6 +152,94 @@ namespace LINQ01
             //}
 
             #endregion
+
+
+            #region Transformation {Projection} Operators [Select , Indexed Select]
+
+            //var productName = ProductList.Select(p => p.ProductName);
+
+            //foreach (var item in productName)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            // Fluent
+            //var updateProducts = ProductList.Where(product => product.UnitPrice > 20).Select(product => new Product 
+            //{
+            //    ProductID = product.ProductID,
+            //    ProductName = product.ProductName,
+            //    Category= product.Category,
+            //    UnitsInStock = product.UnitsInStock,
+            //    UnitPrice= product.UnitPrice * 1.2m
+
+            //});
+
+            // Query
+
+            //var updateProducts = from product in ProductList
+            //                     select new Product
+            //                     {
+            //                         ProductID = product.ProductID,
+            //                         ProductName = product.ProductName,
+            //                         Category = product.Category,
+            //                         UnitsInStock = product.UnitsInStock,
+            //                         UnitPrice = product.UnitPrice * 1.2m
+
+            //                     } into newProductTable
+            //                     where newProductTable.UnitPrice > 20
+            //                     select newProductTable;
+
+            //foreach (var item in updateProducts)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
+            //************************************
+
+            //Indexed Select
+
+            //var result = ProductList.Select((p,i) => new { Index=i,p.ProductName});
+
+            //foreach (var item in  result)
+            //{
+            //    Console.WriteLine($"{item.Index}");
+            //}
+
+
+            //var result = CustomerList.Select(c => c.Orders);
+
+            //var result = CustomerList.SelectMany(c =>  c.Orders);
+            //var result = CustomerList.SelectMany( (c, i) => c.Orders.Select(o => new {Index = i, o}));
+            //var result = CustomerList
+            //    .SelectMany((c, i) => c.Orders
+            //    .Select((o) => new 
+            //{
+            //    CID = c.CustomerID, c.CustomerName, o.OrderID, o.OrderDate, o.Total 
+            //}));
+           
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            //List<int[]> ints = new List<int[]>() { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 } };
+
+
+            //var numbers = ints.SelectMany(i => i);
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
+
+
 
         }
     }
