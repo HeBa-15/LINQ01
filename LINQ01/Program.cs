@@ -20,7 +20,7 @@
 
             #region LINQ Syntax
 
-            List<int> numbers = new List<int> {1,2,3,4,5,6,7,8,9 };
+            // List<int> numbers = new List<int> {1,2,3,4,5,6,7,8,9 };
 
             // 1. Fluent Syntax
 
@@ -57,6 +57,49 @@
             //{
             //    Console.Write($"{n},");
             //}
+
+            #endregion
+
+
+            #region LINQ Execution
+
+
+            // 2 Ways for Linq To Execute
+
+            
+            // 1. Differed Execution => (latest update of data between query def and first use of the query result )
+           
+            //  All Linq Operators Except 3 => { Element , Aggregate , Casting} operators are differed
+
+            //List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            //var result = numbers.Where(n => n % 2 == 0); // Query Definition
+
+            //numbers.AddRange (new int[] {10, 11, 12, 13, 14, 15 , 16 , 17 , 18 , 19 , 20 } );
+            //numbers.RemoveRange(0, 5);
+
+            //foreach (int n in result)
+            //{
+            //    Console.Write(n);
+            //}
+
+
+            //******************************************
+
+            // 2. Immediate Execution
+           
+            //List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            //var result = numbers.Where(n => n % 2 == 0).ToList(); // Query Definition
+
+            //numbers.AddRange(new int[] { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 });
+            //numbers.RemoveRange(0, 5);
+
+            //foreach (int n in result)
+            //{
+            //    Console.Write(n);
+            //}
+
 
             #endregion
 
