@@ -1,4 +1,5 @@
-﻿namespace LINQ01
+﻿using static LINQ01.ListGenerators;
+namespace LINQ01
 {
     internal class Program
     {
@@ -66,9 +67,9 @@
 
             // 2 Ways for Linq To Execute
 
-            
+
             // 1. Differed Execution => (latest update of data between query def and first use of the query result )
-           
+
             //  All Linq Operators Except 3 => { Element , Aggregate , Casting} operators are differed
 
             //List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -87,7 +88,7 @@
             //******************************************
 
             // 2. Immediate Execution
-           
+
             //List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
             //var result = numbers.Where(n => n % 2 == 0).ToList(); // Query Definition
@@ -99,6 +100,22 @@
             //{
             //    Console.Write(n);
             //}
+
+
+            #endregion
+
+
+            #region LINQ Data SetUp
+
+            foreach (var product in ProductList)
+            {
+                Console.WriteLine(product);
+            }
+
+            foreach (var c in CustomerList)
+            {
+                Console.WriteLine(c);
+            }
 
 
             #endregion
