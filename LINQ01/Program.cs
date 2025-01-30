@@ -107,16 +107,49 @@ namespace LINQ01
 
             #region LINQ Data SetUp
 
-            foreach (var product in ProductList)
-            {
-                Console.WriteLine(product);
-            }
+            //foreach (var product in ProductList)
+            //{
+            //    Console.WriteLine(product);
+            //}
 
-            foreach (var c in CustomerList)
-            {
-                Console.WriteLine(c);
-            }
+            //foreach (var c in CustomerList)
+            //{
+            //    Console.WriteLine(c);
+            //}
 
+
+            #endregion
+
+            #region Filtration (Restriction) Operator [Where , indexed Where]
+
+            //foreach (var product in ProductList)
+            //{
+            //    Console.WriteLine(product);
+            //}
+
+            // Get all the products that out of stock => UnitOfStock == 0
+
+            // Fluent
+
+            // var result = ProductList.Where(p => p.UnitsInStock == 0);
+
+            //*************
+
+            // Query 
+
+            //var result = from p in ProductList
+            //             where p.UnitsInStock == 0
+            //             select p;
+
+            //Indexed Where
+
+          //  var result = ProductList.Where((product,index) => product.UnitPrice > 50 && index < 10);
+
+
+            //foreach (var unit in result)
+            //{
+            //    Console.WriteLine(unit);
+            //}
 
             #endregion
 
